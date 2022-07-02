@@ -1,11 +1,11 @@
 version: 1
 packages:
-  - name: "db"
-    path: "./db/sqlc"
-    queries: "./db/query/"
-    schema: "./db/migration/"
+  - name: "db" #生成的包名
+    path: "./db/sqlc" #生成文件路径
+    queries: "./db/query/" #查询的sql文件
+    schema: "./db/migration/" #建表的sql文件
     engine: "postgresql"
-    emit_json_tags: true
-    emit_prepared_queries: false
-    emit_interface: false
+    emit_json_tags: true #默认为false，设置该字段为true可以为生成的模型对象结构添加 JSON 标签
+    emit_prepared_queries: false #默认为false，设置该字段为true，会为 SQL 生成对应的prepared statement
+    emit_interface: false #默认为false，设置该字段为true，会为查询结构生成一个接口。
     emit_exact_table_names: false
